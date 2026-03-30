@@ -31,13 +31,7 @@ class MainActivity : AppCompatActivity() {
         val binding = DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
 
     }
-    // TODO (01) Create the new TitleFragment
-    // Select File->New->Fragment->Fragment (Blank)
-
-    // TODO (02) Clean up the new TitleFragment
-    // In our new TitleFragment
-
-    // TODO (03) Use DataBindingUtil.inflate to inflate and return the titleFragment in onCreateView
-    // In our new TitleFragment
-    // R.layout.fragment_title
+    // TODO (02) Add the Navigation Graph to the Project
+    // Right click on the res directory and select New > Android resource file
+    // Select Navigation as the resource type and give it the file name navigation
 }
