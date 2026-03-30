@@ -117,7 +117,7 @@ git clone https://github.com/chamkartech/android-kotlin-m1-navigation.git
 ```bash
 # 1. Clone the repo
 git clone https://github.com/chamkartechcambodia-sudo/android-kotlin-m3-navigation.git
-cd android-kotlin-m1-navigation
+cd android-kotlin-m3-navigation
 
 # 2. Checkout your exercise branch (example: ex01)
 git checkout navigation_ex01
