@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
     app:startDestination="@id/titleFragment">
     <fragment
         android:id="@+id/titleFragment"
         android:name="com.example.trivia.TitleFragment"
-        android:label="TitleFragment" >
+        android:label="@string/android_trivia"
+        tools:layout="@layout/fragment_title"
+        >
         <action
             android:id="@+id/action_titleFragment_to_gameFragment2"
             app:destination="@id/gameFragment2" />
@@ -14,5 +17,21 @@
     <fragment
         android:id="@+id/gameFragment2"
         android:name="com.example.trivia.GameFragment"
-        android:label="GameFragment" />
+        android:label="@string/android_trivia"
+        tools:layout="@layout/fragment_game"
+        >
+        <!-- TODO (03) Create an Action connecting the GameFragment to the GameWonFragment
+                    Go to the navigation editor and hover over the GameFragment.  Click on the
+                    connection point and drag the action line to the GameWonFragment.
+               -->
+        <!-- TODO (04) Create an Action connecting the GameFragment to the GameOverFragment
+             Go to the navigation editor and hover over the GameFragment.  Click on the
+             connection point and drag the action line to the GameOverFragment.
+        -->
+    </fragment>
+    <!-- TODO (01) Add the GameWonFragment to the Navigation Graph
+            Go to the navigation editor and click the add button.  Add fragment_game_won. -->
+    <!-- TODO (02) Add the GameOverFragment to the Navigation Graph
+             Go to the navigation editor and click the add button.  Add fragment_game_over. -->
+
 </navigation>
