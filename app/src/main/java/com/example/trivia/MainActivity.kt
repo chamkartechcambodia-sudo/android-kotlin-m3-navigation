@@ -29,6 +29,12 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
-
+        // TODO (01) Find the navController from myNavHostFragment
+        // Since we're using KTX, you can call this.findNavController
+        // TODO (02) Link the navController to our ActionBar
+        // By calling NavigationUI.setupActionBarWithNavController
     }
+
+    // TODO (03) Override onSupportNavigateUp
+    // Find the navController and then call navController.navigateUp
 }
