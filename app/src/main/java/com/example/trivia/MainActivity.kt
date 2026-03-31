@@ -20,7 +20,9 @@ import androidx.databinding.DataBindingUtil
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.NavigationUI
 import com.example.trivia.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -29,12 +31,12 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
-        // TODO (01) Find the navController from myNavHostFragment
-        // Since we're using KTX, you can call this.findNavController
-        // TODO (02) Link the navController to our ActionBar
-        // By calling NavigationUI.setupActionBarWithNavController
-    }
+        val navController = this.findNavController(R.id.myNavHostFragment)
+        NavigationUI.setupActionBarWithNavController(this, navController)
 
-    // TODO (03) Override onSupportNavigateUp
-    // Find the navController and then call navController.navigateUp
+    }
+    override fun onSupportNavigateUp(): Boolean {
+        val navController = this.findNavController(R.id.myNavHostFragment)
+        return navController.navigateUp()
+    }
 }
