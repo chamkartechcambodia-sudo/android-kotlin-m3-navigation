@@ -19,24 +19,27 @@ package com.example.trivia
 import androidx.databinding.DataBindingUtil
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.NavigationUI
 import com.example.trivia.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var drawerLayout: DrawerLayout
-    private lateinit var appBarConfiguration : AppBarConfiguration
+    // TODO (05) Add private lateinit vars drawerLayout and appBarConfiguration
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
+        // TODO (06) Initialize drawerLayout var from binding
         val navController = this.findNavController(R.id.myNavHostFragment)
-        NavigationUI.setupActionBarWithNavController(this, navController)
+        // TODO (07) Add the DrawerLayout as the second parameter to setupActionBarWithNavController
+
+        // TODO (08) Create appBarConfiguration with the navController.graph and drawerLayout
+        // TODO (09) Hook the navigation UI up to the navigation view. (navView)
+
 
     }
     override fun onSupportNavigateUp(): Boolean {
         val navController = this.findNavController(R.id.myNavHostFragment)
         return navController.navigateUp()
+        // TODO (10) Replace navController.navigateUp with NavigationUI.navigateUp with drawerLayout par
     }
 }
