@@ -27,6 +27,10 @@
             app:popUpToInclusive="true"
 
             />
+        <!-- TODO 4: Declare the arguments that GameWonFragment will receive.
+             - Each <argument> must have a name and an argType.
+             - argType uses "integer" (lowercase) — not Kotlin's "Int".
+             - Safe Args will generate these as non-null Int properties in GameWonFragmentArgs. -->
         <action
             android:id="@+id/action_gameFragment_to_gameWonFragment"
             app:destination="@id/gameWonFragment"
@@ -51,6 +55,7 @@
         android:name="com.example.trivia.GameOverFragment"
         android:label="@string/android_trivia"
         tools:layout="@layout/fragment_game_over">
+
         <action
             android:id="@+id/action_gameOverFragment_to_gameFragment"
             app:destination="@id/gameFragment"
