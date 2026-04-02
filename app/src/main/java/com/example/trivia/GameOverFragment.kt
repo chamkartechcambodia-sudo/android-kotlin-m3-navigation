@@ -18,28 +18,36 @@ package com.example.trivia
 
 import androidx.databinding.DataBindingUtil
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.navArgs
 import com.example.trivia.databinding.FragmentGameOverBinding
 
 class GameOverFragment : Fragment() {
-    // TODO 7: Use the generated GameOverFragmentArgs class to receive the arguments.
-//         - by navArgs() is a property delegate that lazily reads the argument bundle.
-//         - args.numQuestions and args.numCorrect are non-null Int — no ?: 0 needed.
-//         - Requires navigation-fragment-ktx dependency (already in libs.versions.toml).
+
+    private val args: GameOverFragmentArgs by navArgs()
+
+
+    companion object {
+        private val TAG = GameOverFragment::class.java.simpleName
+    }
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         val binding: FragmentGameOverBinding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_game_over, container, false)
+        Toast.makeText(
+            requireContext(),
+            "You got ${args.numCorrect} out of ${args.numQuestions} correct!",
+            Toast.LENGTH_LONG
+        ).show()
 
-        // TODO 8: Display a Toast showing the score received from GameFragment via Safe Args.
-//         - args.numQuestions and args.numCorrect are already guaranteed to be Int.
-//         - This confirms the arguments were passed and received correctly.
-
+        Log.d(TAG, "onCreateView: ${args.numCorrect} out of ${args.numQuestions} correct!")
         binding.tryAgainButton.setOnClickListener { view: View ->
             view.findNavController().navigate(R.id.action_gameOverFragment_to_gameFragment)
         }

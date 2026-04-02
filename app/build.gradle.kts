@@ -1,8 +1,6 @@
 plugins {
     alias(libs.plugins.android.application)
-    // TODO 3: Apply the Safe Args plugin in the app module to activate it.
-//         Unlike the project-level declaration, there is no "apply false" here.
-//         This tells Gradle to run Safe Args and generate Directions and Args classes.
+    alias(libs.plugins.androidx.navigation.safeargs)
 }
 
 android {

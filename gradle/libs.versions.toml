@@ -23,7 +23,4 @@ androidx-navigation-fragment-ktx = { group = "androidx.navigation", name = "navi
 androidx-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigation" }
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
-# TODO 1: Add the Safe Args Gradle plugin alias to the [plugins] section.
-#         - id must be "androidx.navigation.safeargs.kotlin" (not "safeargs" alone — .kotlin is required for Kotlin projects)
-#         - version.ref must point to "navigation" (same version as navigation-fragment and navigation-ui)
-
+androidx-navigation-safeargs = { id = "androidx.navigation.safeargs.kotlin", version.ref = "navigation" }
